@@ -3,8 +3,8 @@
 > TCA Github Repository의 메인 README를 직접 번역해보면서 TCA Base knowledge를 익힌다.  
 > 번역 참고 : [TCA README in Korean](https://gist.github.com/pilgwon/ea05e2207ab68bdd1f49dff97b293b17)
 
-The Composable Architecture(TCA)는 **일관되고 이해할 수 있는 방식**으로 애플리케이션을 만들기 위해 탄생한 라이브러리이다.
-모든 애플 플랫폼(iOS, macOS, tvOS, watchOS)에서 사용이 가능하다.
+The Composable Architecture(TCA)는 **일관되고 이해할 수 있는 방식**으로 애플리케이션을 만들기 위해 탄생한 라이브러리이다.  
+모든 애플 플랫폼(iOS, macOS, tvOS, watchOS)에서 사용이 가능하다.  
 TCA는 다음 3가지 항목을 염두에 두고 만들어졌다.
 - 합성 (Composition)
 - 테스팅 (Testing)
@@ -106,30 +106,30 @@ struct Feature: Reducer {
     func reduce(into state: inout State, action: Action) -> Effect<Action> {
         switch action {
         case .factAlertDismissed:
-        state.numberFactAlert = nil
-        return .none
+            state.numberFactAlert = nil
+            return .none
 
         case .decrementButtonTapped:
-        state.count -= 1
-        return .none
+            state.count -= 1
+            return .none
 
         case .incrementButtonTapped:
-        state.count += 1
-        return .none
+            state.count += 1
+            return .none
 
         case .numberFactButtonTapped:
-        return .run { [count = state.count] send in
-            let (data, _) = try await URLSession.shared.data(
-            from: URL(string: "http://numbersapi.com/\(count)/trivia")!
-            )
-            await send(
-            .numberFactResponse(String(decoding: data, as: UTF8.self))
-            )
-        }
+            return .run { [count = state.count] send in
+                let (data, _) = try await URLSession.shared.data(
+                from: URL(string: "http://numbersapi.com/\(count)/trivia")!
+                )
+                await send(
+                .numberFactResponse(String(decoding: data, as: UTF8.self))
+                )
+            }
 
         case let .numberFactResponse(fact):
-        state.numberFactAlert = fact
-        return .none
+            state.numberFactAlert = fact
+            return .none
         }
     }
 }
@@ -150,22 +150,22 @@ struct FeatureView: View {
 
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-        VStack {
-            HStack {
-            Button("−") { viewStore.send(.decrementButtonTapped) }
-            Text("\(viewStore.count)")
-            Button("+") { viewStore.send(.incrementButtonTapped) }
-            }
+            VStack {
+                HStack {
+                Button("−") { viewStore.send(.decrementButtonTapped) }
+                Text("\(viewStore.count)")
+                Button("+") { viewStore.send(.incrementButtonTapped) }
+                }
 
-            Button("Number fact") { viewStore.send(.numberFactButtonTapped) }
-        }
-        .alert(
-            item: viewStore.binding(
-            get: { $0.numberFactAlert.map(FactAlert.init(title:)) },
-            send: .factAlertDismissed
-            ),
-            content: { Alert(title: Text($0.title)) }
-        )
+                Button("Number fact") { viewStore.send(.numberFactButtonTapped) }
+            }
+            .alert(
+                item: viewStore.binding(
+                    get: { $0.numberFactAlert.map(FactAlert.init(title:)) },
+                    send: .factAlertDismissed
+                ),
+                content: { Alert(title: Text($0.title)) }
+            )
         }
     }
 }
@@ -190,7 +190,7 @@ struct MyApp: App {
         WindowGroup {
             FeatureView(
                 store: Store(initialState: Feature.State()) {
-                Feature()
+                    Feature()
                 }
             )
         }
