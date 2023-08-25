@@ -19,7 +19,6 @@ struct AddContactFeature: Reducer {
         case saveButtonTapped
         case setName(String)
         enum Delegate: Equatable {
-            // case cancel
             case saveContact(Contact)
         }
     }
