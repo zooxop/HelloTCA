@@ -16,6 +16,7 @@
 		DB96B9182A972E9300A80A34 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = DB96B9172A972E9300A80A34 /* ComposableArchitecture */; };
 		DB96B91A2A972F2B00A80A34 /* ContactsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96B9192A972F2B00A80A34 /* ContactsFeature.swift */; };
 		DB96B91C2A97327600A80A34 /* AddContactFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96B91B2A97327600A80A34 /* AddContactFeature.swift */; };
+		DB96B91E2A98393900A80A34 /* ContactDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96B91D2A98393900A80A34 /* ContactDetailFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		DB96B9092A972E7200A80A34 /* ContactsExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DB96B9192A972F2B00A80A34 /* ContactsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsFeature.swift; sourceTree = "<group>"; };
 		DB96B91B2A97327600A80A34 /* AddContactFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactFeature.swift; sourceTree = "<group>"; };
+		DB96B91D2A98393900A80A34 /* ContactDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				DB96B8F22A972E7100A80A34 /* Preview Content */,
 				DB96B9192A972F2B00A80A34 /* ContactsFeature.swift */,
 				DB96B91B2A97327600A80A34 /* AddContactFeature.swift */,
+				DB96B91D2A98393900A80A34 /* ContactDetailFeature.swift */,
 			);
 			path = ContactsExample;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB96B91E2A98393900A80A34 /* ContactDetailFeature.swift in Sources */,
 				DB96B8ED2A972E7000A80A34 /* ContactsExampleApp.swift in Sources */,
 				DB96B91C2A97327600A80A34 /* AddContactFeature.swift in Sources */,
 				DB96B91A2A972F2B00A80A34 /* ContactsFeature.swift in Sources */,

@@ -18,12 +18,14 @@ struct ContactsFeature: Reducer {
     struct State: Equatable {
         var contacts: IdentifiedArrayOf<Contact> = []
         @PresentationState var destination: Destination.State?
+        var path = StackState<ContactDetailFeature.State>()
     }
     
     enum Action: Equatable {
         case addButtonTapped
         case deleteButtonTapped(id: Contact.ID)
         case destination(PresentationAction<Destination.Action>)
+        case path(StackAction<ContactDetailFeature.State, ContactDetailFeature.Action>)
         enum Alert: Equatable {
             case confirmDeletion(id: Contact.ID)
         }
@@ -64,10 +66,23 @@ struct ContactsFeature: Reducer {
                     }
                 )
                 return .none
+                
+            case let .path(.element(id: id, action: .delegate(.confirmDeletion))):
+                guard let detailState = state.path[id: id] else {
+                    return .none
+                }
+                state.contacts.remove(id: detailState.contact.id)
+                return .none
+                
+            case .path:
+                return .none
             }
         }
         .ifLet(\.$destination, action: /Action.destination) {
             Destination()
+        }
+        .forEach(\.path, action: /Action.path) {
+            ContactDetailFeature()
         }
     }
 }
@@ -94,21 +109,24 @@ struct ContactsView: View {
     let store: StoreOf<ContactsFeature>
     
     var body: some View {
-        NavigationStack {
+        NavigationStackStore(self.store.scope(state: \.path, action: { .path($0) })) {
             WithViewStore(self.store, observe: \.contacts) { viewStore in
                 List {
                     ForEach(viewStore.state) { contact in
-                        HStack {
-                            Text(contact.name)
-                            Spacer()
-                            Button {
-                                viewStore.send(.deleteButtonTapped(id: contact.id))
-                            } label: {
-                                Image(systemName: "trash")
-                                    .foregroundColor(.red)
+                        NavigationLink(state: ContactDetailFeature.State(contact: contact)) {
+                            HStack {
+                                Text(contact.name)
+                                Spacer()
+                                Button {
+                                    viewStore.send(.deleteButtonTapped(id: contact.id))
+                                } label: {
+                                    Image(systemName: "trash")
+                                        .foregroundColor(.red)
+                                }
                             }
                         }
                     }
+                    .buttonStyle(.borderless)
                 }
                 .navigationTitle("Contacts")
                 .toolbar {
@@ -121,6 +139,8 @@ struct ContactsView: View {
                     }
                 }
             }
+        } destination: { store in
+            ContactDetailView(store: store)
         }
         .sheet(
             store: self.store.scope(state: \.$destination, action: { .destination($0) }),
