@@ -24,5 +24,3 @@ TCA의 [Step-by-step interactive Tutorial](https://pointfreeco.github.io/swift-c
 - TCA는 `Reducer`에 `Effect`라는 개념을 직접 넣었다.
   - `Reducer`가 `State`를 변경하여 `Action`을 처리한 후, `Store`에서 실행되는 비동기 단위를 나타내는 **`Effect`를 반환할 수 있다.**
   - `Effect`는 **외부 시스템과 통신**하고, **외부의 데이터를 다시 `Reducer`에 공급**할 수 있다.
-
-## Navigation
