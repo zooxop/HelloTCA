@@ -24,6 +24,8 @@ struct MainView: View {
         Text(viewStore.title)
           .font(.title)
         
+        Text(viewStore.subState.value.description)
+        
         Button("button") {
           viewStore.send(.tappedAction)
         }

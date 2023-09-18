@@ -23,6 +23,8 @@ struct SubView: View {
       Text(viewStore.title)
         .font(.title)
       
+      Text(viewStore.value.description)
+      
       Button("SubView Button") {
         viewStore.send(.buttonTapped)
       }
@@ -37,6 +39,7 @@ struct SubFeature: Reducer {
   struct State: Equatable {
     
     var title: String = "Sub View"
+    var value: Int = 0
   }
   
   enum Action: Equatable {
@@ -48,6 +51,7 @@ struct SubFeature: Reducer {
       
     case .buttonTapped:
       print("Sub View Button Tapped. (Here is SubView)")
+      state.value += 1
       return .none
     }
   }
