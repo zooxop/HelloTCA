@@ -12,10 +12,11 @@ import ComposableArchitecture
 struct CounterFeature {
   
   @Dependency(\.continuousClock) var clock
+  @Dependency(\.numberFact) var numberFact
   
   // 기능을 구현하기 위한 변수를 State에 만들어준다.
   @ObservableState
-  struct State {
+  struct State: Equatable {
     var count: Int = 0
     var isTimerOn: Bool = false
     var fact: String?
@@ -27,7 +28,7 @@ struct CounterFeature {
     case incrementButtonTapped
     case decrementButtonTapped
     case timerToggleTapped
-    case timerTicked
+    case timerTick
     case factButtonTapped
     case factResponse(String)
   }
@@ -39,7 +40,7 @@ struct CounterFeature {
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
-      case .timerTicked:
+      case .timerTick:
         state.count += 1
         state.fact = nil
         return .none
@@ -60,7 +61,7 @@ struct CounterFeature {
           return .run { send in
             // 주입된 의존성 활용
             for await _ in self.clock.timer(interval: .seconds(1)) {
-              await send(.timerTicked)
+              await send(.timerTick)
             }
           }
           .cancellable(id: CancelID.timer)
@@ -78,11 +79,7 @@ struct CounterFeature {
             await send(.timerToggleTapped)
           }
           
-          let (data, _) = try await URLSession.shared
-            .data(from: URL(string: "http://numbersapi.com/\(count)")!)
-          
-          let fact = String(decoding: data, as: UTF8.self)
-          await send(.factResponse(fact))
+          try await send(.factResponse(self.numberFact.fetch(count)))
         }
         
       case .factResponse(let fact):

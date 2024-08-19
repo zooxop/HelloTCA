@@ -9,15 +9,30 @@
 /* Begin PBXBuildFile section */
 		DB3E53A22C70CE7C00E747ED /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = DB3E53A12C70CE7C00E747ED /* ComposableArchitecture */; };
 		DB3E53A42C70CEA000E747ED /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3E53A32C70CEA000E747ED /* CounterFeature.swift */; };
+		DB8B3D912C72D9F00044986C /* CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8B3D902C72D9F00044986C /* CounterTests.swift */; };
+		DB8B3D9B2C730DD40044986C /* NumberFactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8B3D9A2C730DD40044986C /* NumberFactClient.swift */; };
 		DB9746052C70CB7C00AD7F52 /* CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9746042C70CB7C00AD7F52 /* CounterApp.swift */; };
 		DB9746072C70CB7C00AD7F52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9746062C70CB7C00AD7F52 /* ContentView.swift */; };
 		DB9746092C70CB7E00AD7F52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9746082C70CB7E00AD7F52 /* Assets.xcassets */; };
 		DB97460C2C70CB7E00AD7F52 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB97460B2C70CB7E00AD7F52 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DB8B3D922C72D9F00044986C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9745F92C70CB7C00AD7F52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB9746002C70CB7C00AD7F52;
+			remoteInfo = Counter;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		DB3E53A32C70CEA000E747ED /* CounterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeature.swift; sourceTree = "<group>"; };
 		DB8B3D892C72D6BA0044986C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DB8B3D8E2C72D9F00044986C /* CounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8B3D902C72D9F00044986C /* CounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTests.swift; sourceTree = "<group>"; };
+		DB8B3D9A2C730DD40044986C /* NumberFactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFactClient.swift; sourceTree = "<group>"; };
 		DB9746012C70CB7C00AD7F52 /* Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9746042C70CB7C00AD7F52 /* CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterApp.swift; sourceTree = "<group>"; };
 		DB9746062C70CB7C00AD7F52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,6 +41,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DB8B3D8B2C72D9F00044986C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB9745FE2C70CB7C00AD7F52 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,19 +67,44 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		DB3E539F2C70CE0D00E747ED /* Reducer */ = {
+		DB3E539F2C70CE0D00E747ED /* Feature */ = {
 			isa = PBXGroup;
 			children = (
 				DB3E53A32C70CEA000E747ED /* CounterFeature.swift */,
 			);
-			path = Reducer;
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		DB8B3D8F2C72D9F00044986C /* CounterTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB8B3D902C72D9F00044986C /* CounterTests.swift */,
+			);
+			path = CounterTests;
+			sourceTree = "<group>";
+		};
+		DB8B3D972C72DD270044986C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB8B3D9C2C7313650044986C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DB8B3D9A2C730DD40044986C /* NumberFactClient.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		DB9745F82C70CB7C00AD7F52 = {
 			isa = PBXGroup;
 			children = (
 				DB9746032C70CB7C00AD7F52 /* Counter */,
+				DB8B3D8F2C72D9F00044986C /* CounterTests */,
 				DB9746022C70CB7C00AD7F52 /* Products */,
+				DB8B3D972C72DD270044986C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				DB9746012C70CB7C00AD7F52 /* Counter.app */,
+				DB8B3D8E2C72D9F00044986C /* CounterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,7 +123,8 @@
 				DB8B3D892C72D6BA0044986C /* Info.plist */,
 				DB9746042C70CB7C00AD7F52 /* CounterApp.swift */,
 				DB3E539E2C70CE0700E747ED /* View */,
-				DB3E539F2C70CE0D00E747ED /* Reducer */,
+				DB3E539F2C70CE0D00E747ED /* Feature */,
+				DB8B3D9C2C7313650044986C /* Network */,
 				DB9746082C70CB7E00AD7F52 /* Assets.xcassets */,
 				DB97460A2C70CB7E00AD7F52 /* Preview Content */,
 			);
@@ -93,6 +142,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DB8B3D8D2C72D9F00044986C /* CounterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB8B3D942C72D9F00044986C /* Build configuration list for PBXNativeTarget "CounterTests" */;
+			buildPhases = (
+				DB8B3D8A2C72D9F00044986C /* Sources */,
+				DB8B3D8B2C72D9F00044986C /* Frameworks */,
+				DB8B3D8C2C72D9F00044986C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB8B3D932C72D9F00044986C /* PBXTargetDependency */,
+			);
+			name = CounterTests;
+			packageProductDependencies = (
+			);
+			productName = CounterTests;
+			productReference = DB8B3D8E2C72D9F00044986C /* CounterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DB9746002C70CB7C00AD7F52 /* Counter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB97460F2C70CB7E00AD7F52 /* Build configuration list for PBXNativeTarget "Counter" */;
@@ -123,6 +192,10 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					DB8B3D8D2C72D9F00044986C = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = DB9746002C70CB7C00AD7F52;
+					};
 					DB9746002C70CB7C00AD7F52 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -145,11 +218,19 @@
 			projectRoot = "";
 			targets = (
 				DB9746002C70CB7C00AD7F52 /* Counter */,
+				DB8B3D8D2C72D9F00044986C /* CounterTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DB8B3D8C2C72D9F00044986C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB9745FF2C70CB7C00AD7F52 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,6 +243,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DB8B3D8A2C72D9F00044986C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8B3D912C72D9F00044986C /* CounterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB9745FD2C70CB7C00AD7F52 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,12 +258,67 @@
 				DB3E53A42C70CEA000E747ED /* CounterFeature.swift in Sources */,
 				DB9746072C70CB7C00AD7F52 /* ContentView.swift in Sources */,
 				DB9746052C70CB7C00AD7F52 /* CounterApp.swift in Sources */,
+				DB8B3D9B2C730DD40044986C /* NumberFactClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DB8B3D932C72D9F00044986C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB9746002C70CB7C00AD7F52 /* Counter */;
+			targetProxy = DB8B3D922C72D9F00044986C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		DB8B3D952C72D9F00044986C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AWR77X8V5R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chmun.CounterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Counter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Counter";
+			};
+			name = Debug;
+		};
+		DB8B3D962C72D9F00044986C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AWR77X8V5R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chmun.CounterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Counter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Counter";
+			};
+			name = Release;
+		};
 		DB97460D2C70CB7E00AD7F52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -367,6 +511,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DB8B3D942C72D9F00044986C /* Build configuration list for PBXNativeTarget "CounterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8B3D952C72D9F00044986C /* Debug */,
+				DB8B3D962C72D9F00044986C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DB9745FC2C70CB7C00AD7F52 /* Build configuration list for PBXProject "Counter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
