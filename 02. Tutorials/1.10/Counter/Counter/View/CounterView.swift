@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  CounterView.swift
 //  Counter
 //
 //  Created by 문철현 on 8/17/24.
@@ -8,7 +8,7 @@
 import ComposableArchitecture
 import SwiftUI
 
-struct ContentView: View {
+struct CounterView: View {
   // let store: Store<CounterFeature.State, CounterFeature.Action>의 축약형이다.
   @Perception.Bindable var store: StoreOf<CounterFeature>
   
@@ -63,7 +63,7 @@ struct ContentView: View {
   }
 }
 
-extension ContentView {
+extension CounterView {
   private func counterButton(_ title: String, _ action: @escaping () -> Void) -> some View {
     Button(title) {
       action()
@@ -85,7 +85,7 @@ extension ContentView {
 }
 
 #Preview {
-  ContentView(store: Store(initialState: CounterFeature.State()) {
+  CounterView(store: Store(initialState: CounterFeature.State()) {
     CounterFeature()
   })
 }
