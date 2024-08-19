@@ -17,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		DB3E53A32C70CEA000E747ED /* CounterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeature.swift; sourceTree = "<group>"; };
+		DB8B3D892C72D6BA0044986C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DB9746012C70CB7C00AD7F52 /* Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9746042C70CB7C00AD7F52 /* CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterApp.swift; sourceTree = "<group>"; };
 		DB9746062C70CB7C00AD7F52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		DB9746032C70CB7C00AD7F52 /* Counter */ = {
 			isa = PBXGroup;
 			children = (
+				DB8B3D892C72D6BA0044986C /* Info.plist */,
 				DB9746042C70CB7C00AD7F52 /* CounterApp.swift */,
 				DB3E539E2C70CE0700E747ED /* View */,
 				DB3E539F2C70CE0D00E747ED /* Reducer */,
@@ -303,6 +305,7 @@
 				DEVELOPMENT_TEAM = AWR77X8V5R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Counter/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -337,6 +340,7 @@
 				DEVELOPMENT_TEAM = AWR77X8V5R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Counter/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
