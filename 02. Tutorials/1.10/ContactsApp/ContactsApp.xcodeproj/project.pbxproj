@@ -16,6 +16,8 @@
 		DB37C5CD2C73E39100D38BFC /* AddContactFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB37C5CC2C73E39100D38BFC /* AddContactFeature.swift */; };
 		DB37C5CF2C73E42500D38BFC /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB37C5CE2C73E42500D38BFC /* AddContactView.swift */; };
 		DB4559772C789D32004C597D /* ContactsFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4559762C789D32004C597D /* ContactsFeatureTests.swift */; };
+		DB4559792C78EC2D004C597D /* ContactDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4559782C78EC2D004C597D /* ContactDetailFeature.swift */; };
+		DB45597B2C78EFDC004C597D /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB45597A2C78EFDC004C597D /* ContactDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		DB37C5CC2C73E39100D38BFC /* AddContactFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactFeature.swift; sourceTree = "<group>"; };
 		DB37C5CE2C73E42500D38BFC /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 		DB4559762C789D32004C597D /* ContactsFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsFeatureTests.swift; sourceTree = "<group>"; };
+		DB4559782C78EC2D004C597D /* ContactDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailFeature.swift; sourceTree = "<group>"; };
+		DB45597A2C78EFDC004C597D /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 			children = (
 				DB37C5C42C73E02800D38BFC /* ContactsFeature.swift */,
 				DB37C5CC2C73E39100D38BFC /* AddContactFeature.swift */,
+				DB4559782C78EC2D004C597D /* ContactDetailFeature.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			children = (
 				DB37C5CA2C73E1A500D38BFC /* ContactsView.swift */,
 				DB37C5CE2C73E42500D38BFC /* AddContactView.swift */,
+				DB45597A2C78EFDC004C597D /* ContactDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,8 +239,10 @@
 			files = (
 				DB37C5CB2C73E1A500D38BFC /* ContactsView.swift in Sources */,
 				DB37C5CF2C73E42500D38BFC /* AddContactView.swift in Sources */,
+				DB45597B2C78EFDC004C597D /* ContactDetailView.swift in Sources */,
 				DB37C59A2C73D07300D38BFC /* ContactsApp.swift in Sources */,
 				DB37C5C52C73E02800D38BFC /* ContactsFeature.swift in Sources */,
+				DB4559792C78EC2D004C597D /* ContactDetailFeature.swift in Sources */,
 				DB37C5CD2C73E39100D38BFC /* AddContactFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

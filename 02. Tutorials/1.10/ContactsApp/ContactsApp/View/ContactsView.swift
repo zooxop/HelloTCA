@@ -14,19 +14,22 @@ struct ContactsView: View {
   
   var body: some View {
     WithPerceptionTracking {
-      NavigationStack {
+      NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
         List {
           ForEach(store.contacts) { contact in
-            HStack {
-              Text(contact.name)
-              Spacer()
-              Button {
-                store.send(.deleteButtonTapped(id: contact.id))
-              } label: {
-                Image(systemName: "trash")
-                  .foregroundStyle(.red)
+            NavigationLink(state: ContactDetailFeature.State(contact: contact)) {
+              HStack {
+                Text(contact.name)
+                Spacer()
+                Button {
+                  store.send(.deleteButtonTapped(id: contact.id))
+                } label: {
+                  Image(systemName: "trash")
+                    .foregroundStyle(.red)
+                }
               }
             }
+            .buttonStyle(.borderless)
           }
         }
         .navigationTitle("Contacts")
@@ -39,6 +42,8 @@ struct ContactsView: View {
             }
           }
         }
+      } destination: { store in
+        ContactDetailView(store: store)
       }
       .sheet(
         item: $store.scope(state: \.destination?.addContact, action: \.destination.addContact)
